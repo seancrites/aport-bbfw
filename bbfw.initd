@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+
+command="@prefix_dir@/sbin/bbfw"
+extra_started_commands="dump" 
+
+depend() {
+   need net     
+   use logger
+   provide firewall
+}
+ 
+dump() {
+   ebegin "Dumping iptables & ipsets"
+   ${command} dump
+   eend $? "Failed to dump iptables & ipsets"
+}
+
+restart() {
+   ebegin "Restarting BBFW"
+   ${command} restart
+   eend $? "Failed to restart BBFW"
+}
+
+start() {
+   ebegin "Start BBFW"
+   ${command} start
+   eend $? "Failed to start BBFW"
+}
+ 
+stop() {
+   ebegin "Stopping BBFW"
+   ${command} stop
+   eend $? "Failed to stop BBFW"
+}
