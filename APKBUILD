@@ -2,7 +2,7 @@
 # Maintainer: Sean Crites <Sean.Crites@gmail.com>
 pkgname="bbfw"
 pkgver="0.19.0"
-pkgrel=20
+pkgrel=0
 pkgdesc="Firewall script to manage seperate domain, cluster and application filters via ipset & iptables"
 url="https://github.com/bindle/bbfw"
 arch="noarch"
